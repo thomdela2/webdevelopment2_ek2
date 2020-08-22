@@ -17,14 +17,19 @@ class NewsController extends Controller
         return view('pages.news.edit');
     }
 
+    public function getDetail($id) {
+        // dd($id);
+        return view('pages.news.detail');
+    }
+
     public function getEdit($id) {
         // dd($id);
         return view('pages.news.edit');
     }
 
     public function postSave(Request $r) {
-        // dd($r);
+        dd($r);
 
-        return redirect()->route('news.index');
+        // return redirect()->route('news.index');
     }
 }

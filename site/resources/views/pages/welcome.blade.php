@@ -34,6 +34,18 @@
                     </div>
 
             </div>
+            <div class="section-price-content-package vsco-member">
+                <a class="title reg w">VSCO Pro Memberschip</a>
+                <a class="p light w">Annual or monthly subscription</a>
+            <div class="buy-btn">
+                <a href="#" class="p reg btn price-btn member">Buy now</a>
+            </div>
+                <div class="vsco-list-item">
+                    <a class="p sign w">Arrow</a>
+                    <a class="p w">feature</a>
+                </div>
+
+        </div>
         </div>
     </div>
 @endsection

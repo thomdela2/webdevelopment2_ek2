@@ -96,6 +96,13 @@
     flex-wrap: wrap;
 }
 
+.section-detail-content {
+    height: 66vh;
+    width: 84%;
+
+    @include FlexCenterColumn();
+}
+
 .section-price-content, .section-info-content {
     width: 84%;
     height: 100%;

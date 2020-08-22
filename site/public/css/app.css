@@ -212,6 +212,14 @@ input[type=submit] {
   flex-wrap: wrap;
 }
 
+.section-detail-content {
+  height: 66vh;
+  width: 84%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
 .section-price-content,
 .section-info-content {
   width: 84%;
