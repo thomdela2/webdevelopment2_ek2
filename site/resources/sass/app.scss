@@ -1,1 +1,5 @@
-//
+@import './abstracts/index';
+
+*, body {margin: 0; padding: 0;}
+
+@import './base/index';

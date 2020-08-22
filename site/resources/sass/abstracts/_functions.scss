@@ -1,0 +1,28 @@
+@mixin FlexCenterColumn {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+@mixin FlexCenterRow {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+}
+
+@mixin FlexCenterRow {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
+
+@mixin FlexColumn {
+    display: flex;
+    flex-direction: column;
+}
+
+@mixin Paragraph {
+    font-family: $font-fam;
+    font-style: $font-style;
+    font-size: 9pt;
+}

@@ -13,6 +13,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+
+Route::get('/', 'HomeController@getIndex')->name('home.index');
+
+Route::get('/news', 'NewsController@getIndex')->name('news.index');
+Route::get('/news/new', 'NewsController@getCreate')->name('news.new');
+Route::get('/news/{id}', 'NewsController@getEdit')->name('news.edit');
+Route::post('/news/save', 'NewsController@postSave')->name('news.save');
