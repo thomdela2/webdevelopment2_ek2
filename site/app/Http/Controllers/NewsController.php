@@ -22,8 +22,11 @@ class NewsController extends Controller
         return view('pages.news.edit');
     }
 
-    public function getEdit($id) {
-        return view('pages.news.edit', []);
+    public function getEdit(Blog $blog) {
+
+        return view('pages.news.edit', [
+            'blog' => $blog,
+        ]);
     }
 
     public function getDetail($id) {

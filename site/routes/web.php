@@ -19,7 +19,7 @@ Route::get('/', 'HomeController@getIndex')->name('home.index');
 Route::get('/news', 'NewsController@getIndex')->name('news.index');
 Route::get('/news/new', 'NewsController@getCreate')->name('news.new');
 Route::get('/news/delete/{id}', 'NewsController@getDelete')->name('news.delete');
-Route::get('/news/edit/{id}', 'NewsController@getEdit')->name('news.edit');
+Route::get('/news/edit/{blog}', 'NewsController@getEdit')->name('news.edit');
 Route::get('/news/{id}', 'NewsController@getDetail')->name('news.detail');
 Route::post('/news/save', 'NewsController@postSave')->name('news.save');
 
