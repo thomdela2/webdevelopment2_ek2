@@ -19,7 +19,7 @@ class NewsController extends Controller
 
     public function getCreate() {
 
-        return view('pages.news.edit');
+        return view('pages.news.edit', ['blog' => null]);
     }
 
     public function getEdit(Blog $blog) {

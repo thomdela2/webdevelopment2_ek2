@@ -2,13 +2,19 @@
 
 namespace App\Http\Controllers;
 
+use App\Membership;
 use Illuminate\Http\Request;
 
 class HomeController extends Controller
 {
     //
     public function getIndex() {
-        return view('pages.welcome');
+
+        $memberships = Membership::get();
+
+        return view('pages.welcome', [
+            'memberships' => $memberships,
+        ]);
     }
 
     public function getAbout() {
