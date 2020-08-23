@@ -16,7 +16,7 @@ class BlogSeeder extends Seeder
 
         $blog = new Blog();
         $blog->image = $faker->imageUrl(600, 800);
-        $blog->title = $faker->sentence(7);
+        $blog->title = $faker->sentence(3);
         $blog->synopsis = $faker->paragraph(5);
         $blog->user_id = 6;
 

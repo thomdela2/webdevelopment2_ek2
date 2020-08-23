@@ -1,0 +1,18 @@
+// .img {
+//     -webkit-filter: grayscale(80%);
+//     filter: grayscale(80%);
+//     transition: all .4s;
+// }
+
+// .img:hover {
+//     -webkit-filter: grayscale(10%);
+//     filter: grayscale(10%);
+// }
+
+.member:hover {
+    background: $color-primary-hover;
+}
+
+.free:hover {
+    background: $color-white-hover;
+}

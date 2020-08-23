@@ -11,12 +11,12 @@
     <div class="header">
         <div class="header-content">
             <div class="header-content-left">
-                <a class="p reg" href="{{route('home.index')}}">Home</a>
-                <a class="p light" href="{{route('news.index')}}">News</a>
-                <a class="p light" href="#">Contact</a>
+                <a class="p reg" href="{{route('home.index')}}">{{__('Home')}}</a>
+                <a class="p light" href="{{route('news.index')}}">{{__('News')}}</a>
+                <a class="p light" href="#">{{__('Contact')}}</a>
             </div>
             <div class="header-content-right">
-                    <a href="https://apps.apple.com/nl/app/vsco-foto-en-video-editor/id588013838" target="_blank" class="p reg btn header-btn" href="">Get the app</a>
+                    <a href="https://apps.apple.com/nl/app/vsco-foto-en-video-editor/id588013838" target="_blank" class="p reg btn header-btn" href="">{{__('Get the app')}}</a>
             </div>
         </div>
     </div>

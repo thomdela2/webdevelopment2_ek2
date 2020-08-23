@@ -22,11 +22,11 @@
     color: $color-white;
 }
 
-input[type='text'] {
+input[type='text'], input[type='number'] {
     margin-top: 2vh;
 }
 
-input[type='email'], input[type='text'] {
+input[type='email'], input[type='text'], input[type='number'] {
     @include Paragraph();
     width: 40%;
     background: none;
@@ -35,12 +35,12 @@ input[type='email'], input[type='text'] {
     border-bottom: .4px solid $color-black;
 }
 
-input[type='email']::-webkit-input-placeholder, input[type='text']::-webkit-input-placeholder {
+input[type='email']::-webkit-input-placeholder, input[type='text']::-webkit-input-placeholder, input[type='number']::-webkit-input-placeholder {
     @include Paragraph();
     color: $color-black;
 }
 
-input[type='email']:-moz-placeholder, input[type='text']:-moz-placeholder {
+input[type='email']:-moz-placeholder, input[type='text']:-moz-placeholder, input[type='number']:-moz-placeholder {
     @include Paragraph();
     color: $color-black;
 }
@@ -57,6 +57,7 @@ input[type='submit'] {
     background: $color-black;
     color: $color-white;
     @include FlexCenterColumn();
+    transition: all .4s;
 }
 
 .sign {

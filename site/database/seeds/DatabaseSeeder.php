@@ -11,7 +11,7 @@ class DatabaseSeeder extends Seeder
      */
     public function run()
     {
-        // VOLGORDE IS BELANGRIJK
+        // // VOLGORDE IS BELANGRIJK
         $this->call(MembershipSeeder::class);
 
         for($i=0; $i<20; $i++){

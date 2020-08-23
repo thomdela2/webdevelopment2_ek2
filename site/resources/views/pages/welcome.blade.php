@@ -13,9 +13,9 @@
         <div class="section-price-content">
             <div class="section-price-content-package vsco-free">
                     <a class="title reg w">VSCO</a>
-                    <a class="p light w">Free</a>
+                    <a class="p light w">{{__('Free')}}</a>
                 <div class="buy-btn">
-                    <a href="#" class="p reg btn price-btn free">Download VSCO</a>
+                    <a href="#" class="p reg btn price-btn free">{{__('Download VSCO')}}</a>
                 </div>
                     <div class="vsco-list-item">
                         <a class="p sign w">Arrow</a>
@@ -24,9 +24,9 @@
             </div>
             <div class="section-price-content-package vsco-member">
                     <a class="title reg w">VSCO Memberschip</a>
-                    <a class="p light w">Annual or monthly subscription</a>
+                    <a class="p light w">{{__('Annual or monthly subscription')}}</a>
                 <div class="buy-btn">
-                    <a href="#" class="p reg btn price-btn member">Buy now</a>
+                    <a href="#" class="p reg btn price-btn member">{{__('Buy now')}}</a>
                 </div>
                     <div class="vsco-list-item">
                         <a class="p sign w">Arrow</a>
@@ -36,9 +36,9 @@
             </div>
             <div class="section-price-content-package vsco-member">
                 <a class="title reg w">VSCO Pro Memberschip</a>
-                <a class="p light w">Annual or monthly subscription</a>
+                <a class="p light w">{{__('Annual or monthly subscription')}}</a>
             <div class="buy-btn">
-                <a href="#" class="p reg btn price-btn member">Buy now</a>
+                <a href="#" class="p reg btn price-btn member">{{__('Buy now')}}</a>
             </div>
                 <div class="vsco-list-item">
                     <a class="p sign w">Arrow</a>

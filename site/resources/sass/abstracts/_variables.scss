@@ -9,3 +9,6 @@ $font-style: normal;
 $font-light: 300;
 $font-regular: 400;
 $font-bold: 700;
+
+$color-primary-hover: darken($color-primary, 5%);
+$color-white-hover: darken($color-white, 5%);

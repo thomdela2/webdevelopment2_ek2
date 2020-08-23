@@ -32,12 +32,14 @@ body {
   color: #FFF;
 }
 
-input[type=text] {
+input[type=text],
+input[type=number] {
   margin-top: 2vh;
 }
 
 input[type=email],
-input[type=text] {
+input[type=text],
+input[type=number] {
   font-family: trade-gothic-next, sans-serif;
   font-style: normal;
   font-size: 9pt;
@@ -49,7 +51,8 @@ input[type=text] {
 }
 
 input[type=email]::-webkit-input-placeholder,
-input[type=text]::-webkit-input-placeholder {
+input[type=text]::-webkit-input-placeholder,
+input[type=number]::-webkit-input-placeholder {
   font-family: trade-gothic-next, sans-serif;
   font-style: normal;
   font-size: 9pt;
@@ -57,7 +60,8 @@ input[type=text]::-webkit-input-placeholder {
 }
 
 input[type=email]:-moz-placeholder,
-input[type=text]:-moz-placeholder {
+input[type=text]:-moz-placeholder,
+input[type=number]:-moz-placeholder {
   font-family: trade-gothic-next, sans-serif;
   font-style: normal;
   font-size: 9pt;
@@ -80,6 +84,7 @@ input[type=submit] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  transition: all 0.4s;
 }
 
 .sign {
@@ -227,6 +232,7 @@ input[type=submit] {
   display: flex;
   align-items: center;
   justify-content: space-evenly;
+  flex-wrap: wrap;
   padding: 4vh 0px 4vh 0px;
 }
 
@@ -237,6 +243,7 @@ input[type=submit] {
   display: flex;
   flex-direction: column;
   justify-content: center;
+  margin-bottom: 8vh;
 }
 
 .section-price-content .section-price-content-package .package-header,
@@ -260,7 +267,7 @@ input[type=submit] {
 }
 
 .section-image .img {
-  height: 86vh;
+  height: 90vh;
   width: 100%;
   -o-object-fit: cover;
      object-fit: cover;
@@ -291,8 +298,17 @@ input[type=submit] {
   display: flex;
   flex-direction: column;
   align-items: center;
+  height: 46vh;
+  margin-top: 20vh;
+}
+
+.section-form-error {
+  height: 200px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   justify-content: center;
-  height: 66vh;
 }
 
 .edit {
@@ -302,5 +318,17 @@ input[type=submit] {
   flex-direction: column;
   align-items: center;
   justify-content: center;
+}
+
+.fullheight {
+  height: 66vh;
+}
+
+.member:hover {
+  background: #0000e6;
+}
+
+.free:hover {
+  background: #f2f2f2;
 }
 
