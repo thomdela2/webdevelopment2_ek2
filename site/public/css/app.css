@@ -209,20 +209,26 @@ input[type=submit] {
 }
 
 .section-news-content {
-  width: 84%;
+  width: 88%;
   height: 100%;
   display: flex;
   align-items: center;
-  justify-content: space-evenly;
+  justify-content: space-between;
   flex-wrap: wrap;
 }
 
 .section-detail-content {
-  height: 66vh;
   width: 84%;
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+
+.section-detail-content img {
+  height: 50vh;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .section-price-content,
@@ -281,12 +287,12 @@ input[type=submit] {
 .section-news-post {
   display: flex;
   flex-direction: column;
-  padding: 1.5vh 3vw 1.5vh 3vw;
+  padding: 1.5vh 2vw 1.5vh 2vw;
   margin-bottom: 1.5vh;
 }
 
 .section-news-post .img {
-  height: 140px;
+  width: 200px;
   margin-bottom: 2vh;
 }
 

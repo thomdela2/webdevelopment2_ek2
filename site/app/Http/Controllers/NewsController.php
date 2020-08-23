@@ -29,9 +29,11 @@ class NewsController extends Controller
         ]);
     }
 
-    public function getDetail($id) {
+    public function getDetail(Blog $blog) {
         // dd($id);
-        return view('pages.news.detail', []);
+        return view('pages.news.detail', [
+            'blog' => $blog,
+        ]);
     }
 
     public function getDelete($id) {

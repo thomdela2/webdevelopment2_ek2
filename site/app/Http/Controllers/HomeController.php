@@ -11,6 +11,14 @@ class HomeController extends Controller
         return view('pages.welcome');
     }
 
+    public function getAbout() {
+        dd('about');
+    }
+
+    public function getPrivacyPolicy() {
+        dd('privacy policy');
+    }
+
     public function getMail(Request $r) {
         dd($r);
     }

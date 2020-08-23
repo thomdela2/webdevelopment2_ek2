@@ -12,6 +12,7 @@
         <div class="header-content">
             <div class="header-content-left">
                 <a class="p reg" href="{{route('home.index')}}">{{__('Home')}}</a>
+                <a class="p light" href="{{route('about.index')}}">{{__('About')}}</a>
                 <a class="p light" href="{{route('news.index')}}">{{__('News')}}</a>
                 <a class="p light" href="#">{{__('Contact')}}</a>
             </div>

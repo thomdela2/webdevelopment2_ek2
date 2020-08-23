@@ -86,21 +86,26 @@
 }
 
 .section-news-content {
-    width: 84%;
+    width: 88%;
     height: 100%;
     display: flex;
     align-items: center;
-    justify-content: space-evenly;
-    // background: $color-black;
+    justify-content: space-between;
+    // background: $color-test;
 
     flex-wrap: wrap;
 }
 
 .section-detail-content {
-    height: 66vh;
+    // height: 66vh;
     width: 84%;
 
     @include FlexCenterColumn();
+    img {
+        height: 50vh;
+        width: 100%;
+        object-fit: cover;
+    }
 }
 
 .section-price-content, .section-info-content {
@@ -153,11 +158,12 @@
 .section-news-post {
     display: flex;
     flex-direction: column;
-    padding: 1.5vh 3vw 1.5vh 3vw;
+    padding: 1.5vh 2vw 1.5vh 2vw;
     // background: $color-test;
     margin-bottom: 1.5vh;
     .img {
-        height: 140px;
+        // height: 140px;
+        width: 200px;
         margin-bottom: 2vh;
     }
     .btn {

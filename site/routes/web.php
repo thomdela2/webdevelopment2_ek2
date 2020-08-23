@@ -15,12 +15,14 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', 'HomeController@getIndex')->name('home.index');
+Route::get('/about', 'HomeController@getAbout')->name('about.index');
+Route::get('/privacypolicy', 'HomeController@getPrivacyPolicy')->name('privacypolicy.index');
 
 Route::get('/news', 'NewsController@getIndex')->name('news.index');
 Route::get('/news/new', 'NewsController@getCreate')->name('news.new');
 Route::get('/news/delete/{id}', 'NewsController@getDelete')->name('news.delete');
 Route::get('/news/edit/{blog}', 'NewsController@getEdit')->name('news.edit');
-Route::get('/news/{id}', 'NewsController@getDetail')->name('news.detail');
+Route::get('/news/{blog}', 'NewsController@getDetail')->name('news.detail');
 Route::post('/news/save', 'NewsController@postSave')->name('news.save');
 
 Route::get('/memberships', 'MembershipController@getIndex')->name('memberships.index');
