@@ -42,18 +42,27 @@ class NewsController extends Controller
 
     public function postSave(Request $r) {
 
+        $validationRules = [
+            'news_image' => 'required',
+            'news_title' => 'required',
+            'news_synopsis' => 'required',
+        ];
+
+
+        if($r->id) {
+            // Klante updaten
+            $validationRules['title'] = 'required'.$r->id;
+        } else {
+            // Nieuwe klant
+            $validationRules['title'] = 'required';
+        }
+
         if($r->hasFile('news_image')){
             $fileName = $r->news_image->getClientOriginalName();
             $r->news_image->storeAs('images', $fileName, 'public');
         }
 
-        // dd($fileName);
-
-        $r->validate([
-            'news_image' => 'required',
-            'news_title' => 'required',
-            'news_synopsis' => 'required',
-        ]);
+        $r->validate($validationRules);
 
         $data = [
             'image' => $fileName,
@@ -62,7 +71,14 @@ class NewsController extends Controller
             'user_id' => 7,
         ];
 
-        $blog = Blog::create($data);
+        if($r->id) {
+            // Klante updaten
+            $blog = Blog::where('id', $r->id)->first();
+            $blog->update($data);
+        } else {
+            // Nieuwe klant
+            $blog = Blog::create($data);
+        }
 
         return redirect()->route('news.index');
     }
