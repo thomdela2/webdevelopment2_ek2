@@ -15,10 +15,10 @@ class MembershipSeeder extends Seeder
         $faker = Faker\Factory::create();
 
         $membership = new Membership();
-        $membership->name = $faker->company;
-        $membership->description = $faker->paragraph(2);
-        $membership->price = 8;
-        $membership->features = $faker->paragraph(1);
+        $membership->name = 'VSCO';
+        $membership->description = 'Free';
+        $membership->price = 0.00;
+        // $membership->features = $faker->paragraph(1);
 
         $membership->save();
     }

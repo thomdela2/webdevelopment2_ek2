@@ -26,36 +26,49 @@ class MembershipController extends Controller
 
     public function getCreate() {
 
-        return view('pages.memberships.edit');
+        return view('pages.memberships.edit', [
+            'membership' => null,
+        ]);
     }
 
-    public function getEdit($id) {
-        return view('pages.memberships.edit', []);
+    public function getEdit(Membership $membership) {
+
+        return view('pages.memberships.edit', [
+            'membership' => $membership,
+        ]);
     }
 
     public function getDelete($id) {
-        dd('delete');
+
+        $membership = Membership::where('id', $id)->first();
+        $membership->delete();
+
+        return redirect()->route('memberships.index');
     }
 
     public function postSave(Request $r) {
 
-        $price = number_format($r->memberships_price);
-
-        $r->validate([
+        $validationRules = [
             'memberships_name' => 'required',
             'memberships_price' => 'required',
             'memberships_description' => 'required',
-            'memberships_features' => 'required',
-        ]);
+        ];
+
+        $r->validate($validationRules);
 
         $data = [
             'name' => $r->memberships_name,
-            'price' => $price,
+            'price' => $r->memberships_price,
             'description' => $r->memberships_description,
             'features' => $r->memberships_features,
         ];
 
-        $membership = Membership::create($data);
+        if($r->id) {
+            $membership = Membership::where('id', $r->id)->first();
+            $membership->update($data);
+        } else {
+            $membership = Membership::create($data);
+        }
 
         return redirect()->route('memberships.index');
     }
@@ -64,11 +77,12 @@ class MembershipController extends Controller
     public function makePayement($id) {
 
         $value = Membership::where('id', $id)->first()->price;
+        $price = number_format((float)$value, 2, '.', '');
 
         $payment = Mollie::api()->payments->create([
             "amount" => [
                 "currency" => "EUR",
-                "value" => $value, // You must send the correct number of decimals, thus we enforce the use of strings
+                "value" => $price, // You must send the correct number of decimals, thus we enforce the use of strings
             ],
             "description" => "API payement from Laravel",
             "redirectUrl" => route('memberships.success'),

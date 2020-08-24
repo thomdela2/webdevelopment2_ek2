@@ -31,7 +31,7 @@ Route::name('webhooks.mollie')->any('webhooks/mollie', 'WebHookController@handle
     Route::get('/memberships', 'MembershipController@getIndex')->name('memberships.index');
     Route::get('/memberships/new', 'MembershipController@getCreate')->name('memberships.new');
     Route::get('/memberships/delete/{id}', 'MembershipController@getDelete')->name('memberships.delete');
-    Route::get('/memberships/edit/{id}', 'MembershipController@getEdit')->name('memberships.edit');
+    Route::get('/memberships/edit/{membership}', 'MembershipController@getEdit')->name('memberships.edit');
     Route::post('/memberships/save', 'MembershipController@postSave')->name('memberships.save');
 
     Route::get('/memberships/pay/{id}', 'MembershipController@makePayement')->name('memberships.pay');

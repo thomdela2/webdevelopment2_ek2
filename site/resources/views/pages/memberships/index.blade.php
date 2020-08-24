@@ -16,7 +16,7 @@
                     <input type="hidden" name="membership_id" value="{{$membership->id}}">
                     <input class="p reg btn price-btn free" type="submit" value="Download VSCO">
                 </form> --}}
-                <a href="{{route('memberships.pay', $membership->id)}}" class="p reg btn price-btn free">{{__('Download VSCO')}}</a>
+                <a href="https://apps.apple.com/nl/app/vsco-foto-en-video-editor/id588013838" target="_blank" class="p reg btn price-btn free">{{__('Download VSCO')}}</a>
 
 
                 @else
@@ -29,6 +29,13 @@
                 @endif
 
             </div>
+            @guest
+                @if (Route::has('login'))
+                @endif
+                @else
+                <a href="{{route('memberships.edit', $membership->id)}}" class="p reg w">Edit</a>
+                <a href="{{route('memberships.delete', $membership->id)}}" class="p light w">Delete</a>
+                @endguest
             <div class="vsco-list-item">
                 <a class="p w">€</a>
                 <a class="p w">{{$membership->price}}</a>

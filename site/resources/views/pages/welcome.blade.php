@@ -17,7 +17,7 @@
             <a class="p light w">{{$membership->description}}</a>
             <div class="buy-btn">
                 @if ($membership->price == 0)
-                <a href="{{route('memberships.pay', $membership->id)}}" class="p reg btn price-btn free">{{__('Download VSCO')}}</a>
+                <a href="https://apps.apple.com/nl/app/vsco-foto-en-video-editor/id588013838" target="_blank" class="p reg btn price-btn free">{{__('Download VSCO')}}</a>
                 @else
                 <a href="{{route('memberships.pay', $membership->id)}}" class="p reg btn price-btn member">{{__('Buy now')}}</a>
                 @endif
