@@ -17,9 +17,9 @@
             <a class="p light w">{{$membership->description}}</a>
             <div class="buy-btn">
                 @if ($membership->price == 0)
-                <a href="#" class="p reg btn price-btn free">{{__('Download VSCO')}}</a>
+                <a href="{{route('memberships.pay', $membership->id)}}" class="p reg btn price-btn free">{{__('Download VSCO')}}</a>
                 @else
-                <a href="#" class="p reg btn price-btn member">{{__('Buy now')}}</a>
+                <a href="{{route('memberships.pay', $membership->id)}}" class="p reg btn price-btn member">{{__('Buy now')}}</a>
                 @endif
 
             </div>

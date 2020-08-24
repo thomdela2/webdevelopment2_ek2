@@ -12,7 +12,7 @@ class MembershipController extends Controller
     //
 
     public function getSucces() {
-        dd('payment proceeded');
+        return redirect()->route('memberships.index');
     }
 
     public function getIndex() {
@@ -60,26 +60,6 @@ class MembershipController extends Controller
         return redirect()->route('memberships.index');
     }
 
-    // public function postBuyProduct(Request $r) {
-    //     // dd($r);
-    //     $membership = Membership::find($r->membership_id);
-
-    //     $user = Auth::user()->id;
-
-    //     // $user = 0;
-    //     // dd($user);
-    //     \Cart::session($user)->add(array(
-    //         'id' => $membership->id,
-    //         'name' => $membership->name,
-    //         'price' => $membership->price,
-    //         'quantity' => 1,
-    //         'attributes' => array(),
-    //         'associateModel' => $membership,
-    //     ));
-
-    //     return redirect()->route('memberships.index');
-    // }
-
 
     public function makePayement($id) {
 
@@ -103,10 +83,4 @@ class MembershipController extends Controller
         // redirect customer to Mollie checkout page
         return redirect($payment->getCheckoutUrl(), 303);
     }
-
-    // if ($payment->isPaid())
-    // {
-    //     echo 'Payment received.';
-    //     // Do your thing ...
-    // }
 }
