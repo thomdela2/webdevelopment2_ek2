@@ -7,10 +7,10 @@
     @if ($membership)
         <input type="hidden" name="id" value="{{$membership->id}}">
     @endif
-    <input class="p light" type="text" name="memberships_name" placeholder="{{__('Name')}}" value="{{old('memberships_name', $membership->name)}}">
-        <input class="p light" type="number" name="memberships_price" placeholder="{{__('Price')}}" value="{{old('memberships_price', $membership->price)}}">
-        <input class="p light" type="text" name="memberships_description" placeholder="{{__('Desciption')}}" value="{{old('memberships_description', $membership->description)}}">
-        <input class="p light" type="text" name="memberships_features" placeholder="{{__('Features')}}" value="{{old('memberships_features', $membership->features)}}">
+    <input class="p light" type="text" name="memberships_name" placeholder="{{__('Name')}}" value="{{old('membership_name', ($membership ? $membership->name : '') ) }}">
+        <input class="p light" type="number" name="memberships_price" placeholder="{{__('Price')}}" value="{{old('membership_price', ($membership ? $membership->price : '')) }}">
+        <input class="p light" type="text" name="memberships_description" placeholder="{{__('Desciption')}}" value="{{old('membership_description', ($membership ? $membership->description : '')) }}">
+        <input class="p light" type="text" name="memberships_features" placeholder="{{__('Features')}}" value="{{old('membership_features', ($membership ? $membership->features : '')) }}">
 
         <div class="buy-btn">
             @if ($membership)
