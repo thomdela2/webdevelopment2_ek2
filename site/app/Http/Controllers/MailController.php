@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Mail;
+use Newsletter;
 
 class MailController extends Controller
 {
@@ -44,6 +45,8 @@ class MailController extends Controller
             // $message->priority(3);
             // $message->attach('pathToFile');
         });
+
+        Newsletter::subscribe($r->emailaddress);
 
         return redirect()->route('home.index');
     }
