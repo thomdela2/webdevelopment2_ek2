@@ -22,7 +22,7 @@ class NewsController extends Controller
         // Van recent naar oud
         // $blogs = Blog::orderBy('created_at', 'desc')->get();
 
-        $blogs = Blog::get();
+        $blogs = Blog::get()->paginate(20);
 
         return view('pages.news.index', [
             'blogs' => $blogs,
