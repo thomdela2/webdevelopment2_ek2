@@ -9,6 +9,7 @@ use Newsletter;
 class MailController extends Controller
 {
     //
+
     public function getMail() {
         return view('pages.mail');
     }
@@ -20,6 +21,8 @@ class MailController extends Controller
             'subject' => $r->subject,
             'content' => $r->content,
         ];
+
+
 
         Mail::send('mails.mail', $data, function ($msg) use($r) {
             $msg->to($r->emailaddress);
