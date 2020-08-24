@@ -33,6 +33,10 @@ Route::get('/memberships/edit/{id}', 'MembershipController@getEdit')->name('memb
 Route::get('/memberships/{id}', 'MembershipController@getDetail')->name('memberships.detail');
 Route::post('/memberships/save', 'MembershipController@postSave')->name('memberships.save');
 
+Route::get('/contact', 'MailController@getMail')->name('contact');
+Route::post('/contact/save', 'MailController@postMail')->name('mail.save');
+Route::post('/signup/save', 'MailController@postSignup')->name('signup.save');
+
 Auth::routes();
 
 // Route::redirect('/home', '/');
