@@ -42,5 +42,7 @@ Route::name('webhooks.mollie')->any('webhooks/mollie', 'WebHookController@handle
     Route::post('/signup/save', 'MailController@postSignup')->name('signup.save');
 
     Auth::routes(['register' => false]);
+    Route::get('users/new', 'UserController@getCreate')->name('register');
+    Route::post('users/new/save', 'UserController@postSave')->name('register.save');
 
     Route::get('/backoffice', 'BackofficeController@getIndex')->name('backoffice.index');

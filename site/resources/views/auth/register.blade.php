@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="section section-form">
-    <form class="edit" action="{{ route('register') }}" method="post">
+    <form class="edit" action="{{ route('register.save') }}" method="post">
         @csrf
         <input class="p light" type="text" name="firstname" placeholder="{{__('Firstname')}}">
         <input class="p light" type="text" name="lastname" placeholder="{{__('Lastname')}}">
