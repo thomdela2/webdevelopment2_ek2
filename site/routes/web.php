@@ -15,6 +15,8 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
+Route::name('webhooks.mollie')->any('webhooks/mollie', 'WebHookController@handle');
+
 Route::get('/', 'HomeController@getIndex')->name('home.index');
 Route::get('/about', 'HomeController@getAbout')->name('about.index');
 Route::get('/privacypolicy', 'HomeController@getPrivacyPolicy')->name('privacypolicy.index');
@@ -30,8 +32,11 @@ Route::get('/memberships', 'MembershipController@getIndex')->name('memberships.i
 Route::get('/memberships/new', 'MembershipController@getCreate')->name('memberships.new');
 Route::get('/memberships/delete/{id}', 'MembershipController@getDelete')->name('memberships.delete');
 Route::get('/memberships/edit/{id}', 'MembershipController@getEdit')->name('memberships.edit');
-Route::get('/memberships/{id}', 'MembershipController@getDetail')->name('memberships.detail');
+// Route::get('/memberships/{id}', 'MembershipController@getDetail')->name('memberships.detail');
 Route::post('/memberships/save', 'MembershipController@postSave')->name('memberships.save');
+Route::post('/memberships/buy', 'MembershipController@postBuyProduct')->name('memberships.buy');
+Route::get('/memberships/pay/{id}', 'MembershipController@makePayement')->name('memberships.pay');
+Route::get('/memberships/succes', 'MembershipController@getSucces')->name('memberships.success');
 
 Route::get('/contact', 'MailController@getMail')->name('contact');
 Route::post('/contact/save', 'MailController@postMail')->name('mail.save');

@@ -4,10 +4,17 @@ namespace App\Http\Controllers;
 
 use App\Membership;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
+use Mollie\Laravel\Facades\Mollie;
 
 class MembershipController extends Controller
 {
     //
+
+    public function getSucces() {
+        dd('payment proceeded');
+    }
+
     public function getIndex() {
 
         $memberships = Membership::get();
@@ -24,11 +31,6 @@ class MembershipController extends Controller
 
     public function getEdit($id) {
         return view('pages.memberships.edit', []);
-    }
-
-    public function getDetail($id) {
-        // dd($id);
-        return view('pages.memberships.detail', []);
     }
 
     public function getDelete($id) {
@@ -57,4 +59,54 @@ class MembershipController extends Controller
 
         return redirect()->route('memberships.index');
     }
+
+    // public function postBuyProduct(Request $r) {
+    //     // dd($r);
+    //     $membership = Membership::find($r->membership_id);
+
+    //     $user = Auth::user()->id;
+
+    //     // $user = 0;
+    //     // dd($user);
+    //     \Cart::session($user)->add(array(
+    //         'id' => $membership->id,
+    //         'name' => $membership->name,
+    //         'price' => $membership->price,
+    //         'quantity' => 1,
+    //         'attributes' => array(),
+    //         'associateModel' => $membership,
+    //     ));
+
+    //     return redirect()->route('memberships.index');
+    // }
+
+
+    public function makePayement($id) {
+
+        $value = Membership::where('id', $id)->first()->price;
+
+        $payment = Mollie::api()->payments->create([
+            "amount" => [
+                "currency" => "EUR",
+                "value" => $value, // You must send the correct number of decimals, thus we enforce the use of strings
+            ],
+            "description" => "API payement from Laravel",
+            "redirectUrl" => route('memberships.success'),
+            "webhookUrl" => 'https://be615aef9727.ngrok.io/webhooks/mollie',
+            "metadata" => [
+                "order_id" => "12345",
+            ],
+        ]);
+
+        $payment = Mollie::api()->payments->get($payment->id);
+
+        // redirect customer to Mollie checkout page
+        return redirect($payment->getCheckoutUrl(), 303);
+    }
+
+    // if ($payment->isPaid())
+    // {
+    //     echo 'Payment received.';
+    //     // Do your thing ...
+    // }
 }
