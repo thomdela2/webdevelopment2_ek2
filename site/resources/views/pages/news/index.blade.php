@@ -10,8 +10,13 @@
                 <img class="img" src="{{ asset('storage/images/'.$blog->image) }}" alt="{{$blog->image}}">
                 <a class="p reg">{{$blog->title}}</a>
                 <a class="p light">{{$blog->created_at}}</a>
+                @guest
+                @if (Route::has('login'))
+                @endif
+                @else
                 <a href="{{route('news.edit', $blog->id)}}" class="p reg">Edit</a>
                 <a href="{{route('news.delete', $blog->id)}}" class="p light">Delete</a>
+                @endguest
                 <div class="buy-btn">
                     <a href="{{route('news.detail', $blog->id)}}" class="btn p reg">{{__('Read')}}</a>
                 </div>

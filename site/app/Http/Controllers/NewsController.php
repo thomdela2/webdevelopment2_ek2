@@ -14,7 +14,7 @@ class NewsController extends Controller
      */
     public function __construct()
     {
-        $this->middleware('auth');
+        // $this->middleware('auth');
     }
 
     public function getIndex() {
@@ -49,7 +49,11 @@ class NewsController extends Controller
     }
 
     public function getDelete($id) {
-        dd('delete');
+        // dd($id);
+        $blog = Blog::where('id', $id)->first();
+        $blog->delete();
+
+        return redirect()->route('news.index');
     }
 
     public function postSave(Request $r) {
