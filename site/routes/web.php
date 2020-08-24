@@ -1,6 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -31,3 +32,8 @@ Route::get('/memberships/delete/{id}', 'MembershipController@getDelete')->name('
 Route::get('/memberships/edit/{id}', 'MembershipController@getEdit')->name('memberships.edit');
 Route::get('/memberships/{id}', 'MembershipController@getDetail')->name('memberships.detail');
 Route::post('/memberships/save', 'MembershipController@postSave')->name('memberships.save');
+
+Auth::routes();
+
+// Route::redirect('/home', '/');
+Route::get('/backoffice', 'BackofficeController@getIndex')->name('backoffice.index');

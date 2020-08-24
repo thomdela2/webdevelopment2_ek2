@@ -1,10 +1,4 @@
-@import url(https://use.typekit.net/wbi8scg.css);*,
-body {
-  margin: 0;
-  padding: 0;
-}
-
-.p {
+@import url(https://fonts.googleapis.com/css?family=Nunito);@import url(https://use.typekit.net/wbi8scg.css);.p {
   font-family: trade-gothic-next, sans-serif;
   font-style: normal;
   font-size: 9pt;
@@ -110,6 +104,10 @@ input[type=submit] {
   align-items: center;
 }
 
+.right {
+  margin-left: 1.5vw;
+}
+
 .container {
   background: #FFF;
 }
@@ -152,6 +150,7 @@ input[type=submit] {
 
 .header .header-content .header-content-right .header-btn {
   width: 50%;
+  margin-left: 1.5vw;
 }
 
 .footer {

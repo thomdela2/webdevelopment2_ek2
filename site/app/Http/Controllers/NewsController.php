@@ -7,8 +7,20 @@ use Illuminate\Http\Request;
 
 class NewsController extends Controller
 {
-    //
+    /**
+     * Create a new controller instance.
+     *
+     * @return void
+     */
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function getIndex() {
+
+        // Van recent naar oud
+        // $blogs = Blog::orderBy('created_at', 'desc')->get();
 
         $blogs = Blog::get();
 
@@ -48,15 +60,6 @@ class NewsController extends Controller
             'news_synopsis' => 'required',
         ];
 
-
-        if($r->id) {
-            // Klante updaten
-            $validationRules['title'] = 'required'.$r->id;
-        } else {
-            // Nieuwe klant
-            $validationRules['title'] = 'required';
-        }
-
         if($r->hasFile('news_image')){
             $fileName = $r->news_image->getClientOriginalName();
             $r->news_image->storeAs('images', $fileName, 'public');
@@ -68,7 +71,6 @@ class NewsController extends Controller
             'image' => $fileName,
             'title' => $r->news_title,
             'synopsis' => $r->news_synopsis,
-            'user_id' => 7,
         ];
 
         if($r->id) {

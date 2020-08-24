@@ -20,7 +20,7 @@ class UserSeeder extends Seeder
         $user->email = $faker->email;
         $user->password = $faker->password(6, 22);
         $user->role = "visitor";
-        $user->membership_id = 3;
+        // $user->membership_id = 3;
 
         $user->save();
     }

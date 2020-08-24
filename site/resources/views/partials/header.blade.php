@@ -17,7 +17,16 @@
                 <a class="p light" href="#">{{__('Contact')}}</a>
             </div>
             <div class="header-content-right">
-                    <a href="https://apps.apple.com/nl/app/vsco-foto-en-video-editor/id588013838" target="_blank" class="p reg btn header-btn" href="">{{__('Get the app')}}</a>
+                <a href="https://apps.apple.com/nl/app/vsco-foto-en-video-editor/id588013838" target="_blank" class="p reg btn header-btn" href="">{{__('Get the app')}}</a>
+                @guest
+                @if (Route::has('login'))
+                <a href="{{ route('login') }}" class="p light btn header-btn">Login</a>
+                @endif
+                @else
+                <a href="{{route('backoffice.index')}}" class="p light right">{{Auth::User()->firstname}}</a>
+                @endguest
+
+
             </div>
         </div>
     </div>
