@@ -81,6 +81,13 @@
     @include FlexCenterColumn;
 }
 
+.section-page {
+    height: 66vh;
+    width: 84%;
+    @include FlexCenterColumn;
+    justify-content: center;
+}
+
 .section-price, .section-info {
     height: 100%;
     background: $color-black;

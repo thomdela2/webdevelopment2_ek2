@@ -37,11 +37,11 @@ class HomeController extends Controller
     }
 
     public function getAbout() {
-        dd('about');
+        return view('pages.about');
     }
 
     public function getPrivacyPolicy() {
-        dd('privacy policy');
+        return view('pages.privacy');
     }
 
     public function getMail(Request $r) {

@@ -201,6 +201,15 @@ input[type=submit] {
   align-items: center;
 }
 
+.section-page {
+  height: 66vh;
+  width: 84%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+
 .section-price,
 .section-info {
   height: 100%;

@@ -50,4 +50,5 @@ class MailController extends Controller
 
         return redirect()->route('home.index');
     }
+
 }
